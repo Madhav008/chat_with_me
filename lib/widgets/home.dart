@@ -1,4 +1,4 @@
-import 'package:chat_with_me/widgets/wid/chat_screen.dart';
+import '../screen/chatscreen.dart';
 import 'package:flutter/material.dart';
 
 import '../model/chat_model.dart';
@@ -20,7 +20,12 @@ class _HomeScreenState extends State<HomeScreen> {
             final Messages chat = chats[index];
             return GestureDetector(
               onTap: () {
-Navigator.push(context, MaterialPageRoute(builder: (context)=>ChatScreen()));},
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => ChatScreen1(),
+                    ));
+              },
               child: Container(
                 margin: EdgeInsets.only(top: 5.0, bottom: 5.0, right: 20.0),
                 padding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
