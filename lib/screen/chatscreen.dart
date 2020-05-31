@@ -15,21 +15,59 @@ class _ChatScrennState extends State<ChatScrenn> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        actions: <Widget>[
-
-          CircleAvatar(
-            radius: 35.0,
-            backgroundImage: AssetImage(widget.user.imageUrl),
-          ),
-          Text(
-          widget.user.name,
-          style: TextStyle(
-            fontSize: 20.0,
-            fontWeight: FontWeight.bold,
-          ),
+        title: Row(
+          children: <Widget>[
+            CircleAvatar(
+              radius: 29.0,
+              backgroundImage: AssetImage(widget.user.imageUrl),
+            ),
+            SizedBox(
+              width: 5.0,
+            ),
+            Text(
+              widget.user.name,
+              style: TextStyle(
+                fontSize: 20.0,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+          ],
         ),
+        elevation: 0.0,
+        actions: <Widget>[
+          IconButton(
+            icon: Icon(Icons.more_horiz),
+            iconSize: 30.0,
+            color: Colors.white,
+            onPressed: () {},
+          ),
         ],
-      
+      ),
+      body: GestureDetector(
+        child: Column(
+          children: [
+            Expanded(
+              child: Container(
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                 
+                ),
+               child: ListView.builder(
+                  reverse: true,
+                  padding: EdgeInsets.only(top: 15.0),
+                  itemCount: messages.length,
+                  itemBuilder: (BuildContext context, int index) {
+                    final Messages message = messages[index];
+                    final bool isMe = message.sender.id == currentUser.id;
+                    return _buildMessage(message, isMe);
+                  },
+                ),
+              ),
+            ),
+            _buildMessageComposer(),
+
+          ]
+        )
       ),
     );
   }
