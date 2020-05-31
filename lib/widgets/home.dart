@@ -18,12 +18,15 @@ class _HomeScreenState extends State<HomeScreen> {
           itemCount: chats.length,
           itemBuilder: (BuildContext context, int index) {
             final Messages chat = chats[index];
+
             return GestureDetector(
               onTap: () {
                 Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => ChatScreen1(),
+                      builder: (_) => ChatScrenn(
+                        user: chat.sender,
+                        ),
                     ));
               },
               child: Container(
