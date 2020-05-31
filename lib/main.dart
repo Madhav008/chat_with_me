@@ -1,4 +1,3 @@
-import 'package:chat_with_me/screen/chat_screen.dart';
 import 'package:chat_with_me/widgets/appbar.dart';
 import 'package:chat_with_me/widgets/home.dart';
 import 'package:flutter/material.dart';
@@ -19,7 +18,7 @@ class MyApp extends StatelessWidget {
         accentColor: Colors.teal,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: ChatScreen(),
+      home: Home(),
     );
   }
 }

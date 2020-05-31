@@ -1,8 +1,7 @@
-import 'package:chat_with_me/widgets/chatlistWidget.dart';
-import 'package:chat_with_me/widgets/imput.dart';
-
-import '../widgets/chatappbar.dart';
 import 'package:flutter/material.dart';
+import '../chatappbar.dart';
+import 'chatlistWidget.dart';
+import 'imput.dart';
 
 class ChatScreen extends StatefulWidget {
   @override
